@@ -1,12 +1,18 @@
 import { db } from "@/lib/db";
 import { auth } from "@clerk/nextjs";
-import { CircleDollarSign, LayoutDashboard, ListChecks } from "lucide-react";
+import {
+  CircleDollarSign,
+  File,
+  LayoutDashboard,
+  ListChecks,
+} from "lucide-react";
 import { redirect } from "next/navigation";
 import TitleForm from "./_components/title-form";
 import DescriptionForm from "./_components/description-form";
 import { CourseImageForm } from "./_components/course-image-form";
 import CategoryForm from "./_components/category-form";
 import PriceForm from "./_components/price-form";
+import { AttachmentForm } from "./_components/attachment-form";
 
 const CoursePage = async ({ params }: { params: { courseId: string } }) => {
   const { userId } = auth();
@@ -15,6 +21,13 @@ const CoursePage = async ({ params }: { params: { courseId: string } }) => {
     where: {
       id: params.courseId,
       userId,
+    },
+    include: {
+      attachments: {
+        orderBy: {
+          createdAt: "desc",
+        },
+      },
     },
   });
   const categories = await db.category.findMany({
@@ -38,7 +51,7 @@ const CoursePage = async ({ params }: { params: { courseId: string } }) => {
       <div>
         <h1 className="text-2xl font-medium tracking-tight">Course setup</h1>
         <span className="text-md font-sm text-slate-500">
-          Comple all fields {fieldText}
+          Complete all fields {fieldText}
         </span>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6  ">
@@ -81,6 +94,15 @@ const CoursePage = async ({ params }: { params: { courseId: string } }) => {
             </div>
 
             <PriceForm course={course} courseId={course.id} />
+          </div>
+          <div>
+            <div className="flex flex-row gap-x-2  items-center mt-10">
+              <div className="bg-slate-200 font-bolder text-slate-800 p-2 rounded-full">
+                <File />
+              </div>
+              <h2 className="text-xl font-medium ">Resources & Attachments</h2>
+            </div>
+            <AttachmentForm initialData={course} courseId={course.id} />
           </div>
         </div>
       </div>
