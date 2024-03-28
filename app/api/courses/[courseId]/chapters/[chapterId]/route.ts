@@ -3,7 +3,6 @@ import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 import Mux from "@mux/mux-node";
 
-
 export async function PATCH(
   req: Request,
   { params }: { params: { courseId: string; chapterId: string } }
@@ -39,16 +38,16 @@ export async function PATCH(
     });
 
     if (values.videoUrl) {
-      const ExistingMuxData = await db.muxData.findUnique({
+      const ExistingMuxData = await db.muxData.findFirst({
         where: {
           chapterId: params.chapterId,
         },
       });
       if (ExistingMuxData) {
-        await video.assets.delete(ExistingMuxData?.id);
+        await video.assets.delete(ExistingMuxData.assetId);
         await db.muxData.delete({
           where: {
-            id: ExistingMuxData?.id,
+            id: ExistingMuxData.id,
           },
         });
       }
@@ -57,13 +56,12 @@ export async function PATCH(
         playback_policy: ["public"],
         test: false,
       });
-
-      if (asset.playback_ids) {
+      if (asset.playback_ids?.[0]?.id) {
         await db.muxData.create({
           data: {
             chapterId: params.chapterId,
             assetId: asset.id,
-            playbackId: asset.playback_ids?.[0].id,
+            playbackId: asset.playback_ids?.[0]?.id,
           },
         });
       }
