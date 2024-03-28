@@ -72,3 +72,76 @@ export async function PATCH(
     return new NextResponse("Internal error", { status: 500 });
   }
 }
+
+export async function DELETE(
+  req: Request,
+  { params }: { params: { courseId: string; chapterId: string } }
+) {
+  try {
+    const { userId } = auth();
+
+    if (!userId) return new NextResponse("Unauthorized", { status: 401 });
+    const { video } = new Mux({
+      tokenId: process.env["MUX_TOKEN_ID"],
+      tokenSecret: process.env["MUX_TOKEN_SECRET"],
+    });
+
+    const IsCourseOwner = await db.course.findUnique({
+      where: {
+        id: params.courseId,
+        userId,
+      },
+    });
+
+    if (!IsCourseOwner)
+      return new NextResponse("Unauthorized", { status: 401 });
+    const chapter = await db.chapter.findUnique({
+      where: {
+        id: params.chapterId,
+        courseId: params.courseId,
+      },
+    });
+    if (!chapter) return new NextResponse("Invalid chapterId", { status: 401 });
+    if (chapter.videoUrl) {
+      const ExistingMuxData = await db.muxData.findFirst({
+        where: {
+          chapterId: params.chapterId,
+        },
+      });
+      if (ExistingMuxData) {
+        await video.assets.delete(ExistingMuxData.assetId);
+        await db.muxData.delete({
+          where: {
+            id: ExistingMuxData.id,
+          },
+        });
+      }
+    }
+    const chapterDeleted = await db.chapter.delete({
+      where: {
+        id: params.chapterId,
+        courseId: params.courseId,
+      },
+    });
+    const coursePublishedChapters = await db.course.findMany({
+      where: {
+        id: params.courseId,
+        isPublished: true,
+      },
+    });
+    if (!coursePublishedChapters.length) {
+      await db.course.update({
+        where: {
+          id: params.courseId,
+        },
+        data: {
+          isPublished: false,
+        },
+      });
+    }
+    return NextResponse.json(chapterDeleted);
+  } catch (error) {
+    console.log("[/chapters/[chapterId]] delete", error);
+    return new NextResponse("Internal error", { status: 500 });
+  }
+}
