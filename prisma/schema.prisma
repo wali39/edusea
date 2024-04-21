@@ -3,21 +3,26 @@
 
 generator client {
   provider = "prisma-client-js"
-  previewFeatures = ["fullTextSearch","fullTextIndex"]
+  // previewFeatures = ["fullTextSearch","fullTextIndex"]
+  // previewFeatures = ["relationJoins"]
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  provider = "mongodb"
+  url      = env("MDB_DATABASE_URL")
+  // url      = env("DATABASE_URL")
+  // directUrl = env("DIRECT_URL")
 }
 
 model Course{
-  id            String @id @default(uuid())
+  // id            String @id @default(uuid())
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
   userId        String
   title         String
-  description   String? @db.Text
-  imageUrl      String? @db.Text
+  // description   String? @db.Text
+  description   String? @db.String
+  // imageUrl      String? @db.Text
+  imageUrl      String? @db.String
   price         Float?
   isPublished   Boolean @default(false)
   categoryId    String?
@@ -29,22 +34,26 @@ model Course{
   updatedAt     DateTime @updatedAt
 }
 model Category{
-  id         String @id @default(uuid())
+  // id         String @id @default(uuid())
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
   name       String @unique
   course     Course[]
 }
 
 model Attachment{
-  id         String @id @default(uuid())
+  // id         String @id @default(uuid())
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
   name       String
-  url        String @db.Text
+  // url        String @db.Text
+  url        String @db.String
   courseId   String
   course     Course @relation(fields: [courseId],references: [id],onDelete: Cascade)
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }
 model Chapter{
-  id         String @id @default(uuid())
+  // id         String @id @default(uuid())
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
   title      String
   description String?
   videoUrl    String?
@@ -61,14 +70,16 @@ model Chapter{
   updatedAt   DateTime @updatedAt
 }
 model MuxData{
-  id           String @id @default(uuid())
+  // id           String @id @default(uuid())
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
   assetId      String
   playbackId   String
   chapterId    String @unique
   chapter      Chapter @relation(fields: [chapterId],references: [id],onDelete: Cascade)
 }
 model UserProgress{
-  id           String @id @default(uuid())
+  // id           String @id @default(uuid())
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
   userId       String
 
   chapterId    String 
@@ -81,7 +92,8 @@ model UserProgress{
 }
 
 model Purchase{
-  id         String @id @default(uuid())
+  // id         String @id @default(uuid())
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
   userId     String
 
   courseId   String
@@ -93,7 +105,8 @@ model Purchase{
 }
 
 model StripeCustomer{
-  id String @id @default(uuid())
+  // id String @id @default(uuid())
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
   userId String @unique
   stripeCustomerId String @unique
   createdAt DateTime @default(now())
