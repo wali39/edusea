@@ -51,14 +51,15 @@ export const getCourses = async ({
 
     const courseWithProgress: courseWithProgress[] = await Promise.all(
       courses.map(async (course) => {
-        if (course.purchases.length == 0) {
+        if (course.purchases.length === 0) {
           return {
             ...course,
             progress: null,
           };
         }
-
-        const userProgress = await getUserProgress(course.id, userId);
+       
+        const userProgress = await getUserProgress(userId, course.id);
+      
         return {
           ...course,
           progress: userProgress,
