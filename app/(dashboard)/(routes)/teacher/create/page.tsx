@@ -40,7 +40,7 @@ const CreatePage = () => {
     try {
       const response = await axios.post("/api/courses", values);
       router.push(`/teacher/courses/${response.data.id}`);
-      toast.success("Course created.")
+      toast.success("Course created.");
     } catch (error) {
       toast.error("Something went wrong.");
       console.log("something went wrong.");
@@ -52,8 +52,8 @@ const CreatePage = () => {
       <div>
         <h1 className="text-2xl font-bold">Name your course</h1>
         <p className="text-sm text-slate-500">
-          What would you like to name your course?Don't worry, you can change it
-          later.
+          What would you like to name your course?Don&apos;t worry, you can
+          change it later.
         </p>
         <Form {...form}>
           <form
