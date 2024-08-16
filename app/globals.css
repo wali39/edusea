@@ -6,6 +6,7 @@ body,
 :root {
   height: 100%;
   width: 100%;
+  background-color: #f4faf8;
 }
 
 @layer base {
@@ -39,6 +40,13 @@ body,
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
+
+    --primary-sea: 165, 40%, 51%;
+    --secondary-sea: 200, 41%, 75%;
+    --accent-sea: 217, 40%, 60%;
+    --text-sea: 162, 39%, 6%;
+    --background-sea: 160, 37%, 97%;
+    --light-background-sea: 162, 40%, 92%;
   }
 
   .dark {
