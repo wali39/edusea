@@ -12,7 +12,7 @@ type DashboardCourses = {
   completedCourses: any[];
   courseInProgress: any[];
 };
-const GetDashboradCrouses = async (
+const GetDashboardCourses = async (
   userId: string
 ): Promise<DashboardCourses> => {
   try {
@@ -57,4 +57,4 @@ const GetDashboradCrouses = async (
   }
 };
 
-export default GetDashboradCrouses;
+export default GetDashboardCourses;
