@@ -42,7 +42,7 @@ const CourseLayout = async ({
 
   return (
     <div className="h-full">
-      <div className="md:pl-80 h-[80px] fixed w-full inset-y-0 z-50">
+      <div className="md:pl-80 h-[80px] fixed w-full inset-y-0 z-10">
         <CourseNavbar course={course} progressCount={progressCount} />
       </div>
       <div className="hidden md:flex flex-col w-80 h-full fixed inset-y-0  z-50 ">

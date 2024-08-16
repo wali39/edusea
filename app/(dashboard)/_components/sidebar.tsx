@@ -6,11 +6,11 @@ import SidebarRoutes from "./sidebar-routes";
 
 const SideBar = () => {
   return (
-    <div className="flex flex-col  border-r-2 h-full  overflow-y-auto shadow-sm bg-stone-50">
-      <div className="p-5">
+    <div className="flex flex-col  border-r-2 h-full  overflow-y-auto shadow-sm ">
+      <div className="px-3 py-3 mb-2">
         <Logo />
       </div>
-      <Separator className="mt-2" />
+      <Separator className="shadow-sm mt-2" />
       <div className="flex flex-col w-full">
         <SidebarRoutes />
       </div>

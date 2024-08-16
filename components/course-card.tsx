@@ -26,29 +26,31 @@ const CourseCard = ({
 }: CourseCardProps) => {
   return (
     <Link href={`/courses/${courseId}`}>
-      <div className="overflow-hidden border group rounded-lg p-3 h-full  ">
+      <div className="overflow-hidden border group rounded-lg p-3 h-full bg-lightBackgroundSea  hover:bg-[#4cb89d2a] ">
         <div className="relative w-full  aspect-video rounded-lg overflow-hidden">
           <Image alt={title} src={imageUrl} fill className="object-cover" />
         </div>
-        <div className="text-xl font-bold mt-3 group-hover:text-sky-500">
+        <div className="text-lg font-bold mt-3 text-textSea group-hover:text-teal-900 line-clamp-2">
           {title}
         </div>
-        <div className="text-muted-foreground text-sm font-semibold">
+        <div className="text-slate-500 text-sm font-semibold">
           {category}
         </div>
         <div className="my-3">
           <div className="flex items-center my-3 gap-2 font-medium">
-            <div className="bg-slate-300 rounded-full p-2 text-slate-700">
-              <BookOpen size={20} />
+            <div className="bg-primarySea rounded-full border-2   p-2 text-white">
+              <BookOpen size={18} />
             </div>
-            <p className="text-muted-foreground">
+            <p className="text-textSea text-sm ">
               {chapters} {chapters == 1 ? "Chapter" : "Chapters"}
             </p>
           </div>
           {progress != null ? (
             <CourseProgress variant="success" value={progress} />
           ) : (
-            <p className="font-bold text-lg">{formatPrice(price)}</p>
+            <p className="font-bold text-lg text-textSea">
+              {formatPrice(price)}
+            </p>
           )}
         </div>
       </div>

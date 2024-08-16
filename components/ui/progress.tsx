@@ -9,7 +9,7 @@ const progressVariants = cva("h-full w-full flex-1 bg-primary transition-all", {
   variants: {
     variant: {
       default: "bg-sky-700",
-      success: "bg-slate-600",
+      success: "bg-primarySea",
     },
   },
   defaultVariants: {

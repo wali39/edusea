@@ -23,8 +23,8 @@ const NavbarRoutes = () => {
         {isTeacherMode || isCourseMode ? (
           <Link href="/">
             <button
-              className="flex gap-x-2 py-2 px-2 bg-gray-50 
-            rounded-sm hover:bg-gray-200 items-center "
+              className="flex gap-x-2 py-2 px-2 bg-lightBackgroundSea 
+            rounded-md hover:bg-[#afd6eb63] text-teal-600 items-center "
             >
               Exit
               <LogOut size={20} />
@@ -32,7 +32,7 @@ const NavbarRoutes = () => {
           </Link>
         ) : (
           <Link href="/teacher/courses">
-            <button className="flex items-center gap-x-2 py-2 px-3 bg-gray-50 rounded-md hover:bg-gray-300">
+            <button className="flex items-center gap-x-2 py-2 px-3 bg-lightBackgroundSea rounded-md hover:bg-[#afd6eb63] text-teal-600">
               <FaChalkboardTeacher size={25} /> Teacher
             </button>
           </Link>

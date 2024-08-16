@@ -66,7 +66,7 @@ const ChapterPage = async ({ params }: ChapterPageProps) => {
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <div className="text-xl font-medium flex items-center gap-2">
-              <span className="bg-slate-200 text-slate-800 rounded-full p-2">
+              <span className="bg-primarySea text-white rounded-full p-2">
                 <LayoutDashboard />
               </span>
               <span> Customize your chapter</span>
@@ -85,7 +85,7 @@ const ChapterPage = async ({ params }: ChapterPageProps) => {
 
             <div className="mt-4">
               <div className="text-xl font-medium flex items-center gap-2">
-                <span className="bg-slate-200 text-slate-800 rounded-full p-2">
+                <span className="bg-primarySea text-white rounded-full p-2">
                   <EyeIcon />
                 </span>
                 <span> Access Settings</span>
@@ -101,7 +101,7 @@ const ChapterPage = async ({ params }: ChapterPageProps) => {
 
           <div>
             <div className="text-xl font-medium flex items-center gap-2">
-              <span className="bg-slate-200 text-slate-800 rounded-full p-2">
+              <span className="bg-primarySea text-white rounded-full p-2">
                 <Video />
               </span>
               <span> Add a video</span>

@@ -82,11 +82,11 @@ const CreatePage = () => {
             />
             <div className="flex gap-x-2">
               <Link href="/">
-                <Button type="button" variant="outline">
+                <Button type="button" variant="outline" className="bg-lightBackgroundSea">
                   Cancel
                 </Button>
               </Link>
-              <Button type="submit" disabled={isSubmitting || !isValid}>
+              <Button type="submit" className="bg-teal-500 text-white hover:bg-teal-600" disabled={isSubmitting || !isValid}>
                 Continue
               </Button>
             </div>

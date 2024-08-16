@@ -35,8 +35,8 @@ const CategoryItem = ({ label, id, icon: Icon }: CategoryItemProps) => {
     <button
       onClick={onClick}
       className={cn(
-        "flex items-center border rounded-lg py-2 px-3 bg-slate-100 gap-x-2 hover:bg-slate-200 ",
-        isSelected && "bg-slate-300 border-slate-500/40 border-2"
+        "flex items-center border rounded-lg py-2 px-3 bg-lightBackgroundSea gap-x-2 hover:bg-[#4fb49b54] ",
+        isSelected && "bg-[#4fb49b54] border-secondarySea border-2"
       )}
       type="button"
     >

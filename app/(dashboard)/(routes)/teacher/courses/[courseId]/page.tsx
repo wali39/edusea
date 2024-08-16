@@ -91,7 +91,7 @@ const CoursePage = async ({ params }: { params: { courseId: string } }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6  ">
           <div className="space-y-6">
             <div className="flex flex-row gap-x-2  items-center mt-10">
-              <div className="bg-slate-200 text-slate-800 p-2 rounded-full">
+              <div className="bg-primarySea text-white p-2 rounded-full">
                 <LayoutDashboard />
               </div>
               <h2 className="text-xl font-medium ">Customize your course</h2>
@@ -112,7 +112,7 @@ const CoursePage = async ({ params }: { params: { courseId: string } }) => {
           <div className="space-y-6">
             <div>
               <div className="flex flex-row gap-x-2  items-center mt-10">
-                <div className="bg-slate-200 font-bolder text-slate-800 p-2 rounded-full">
+                <div className="bg-primarySea font-bolder text-white p-2 rounded-full">
                   <ListChecks />
                 </div>
                 <h2 className="text-xl font-medium ">Course chapters</h2>
@@ -121,7 +121,7 @@ const CoursePage = async ({ params }: { params: { courseId: string } }) => {
             </div>
             <div>
               <div className="flex flex-row gap-x-2  items-center mt-10">
-                <div className="bg-slate-200 font-bolder text-slate-800 p-2 rounded-full">
+                <div className="bg-primarySea font-bolder text-white p-2 rounded-full">
                   <CircleDollarSign />
                 </div>
                 <h2 className="text-xl font-medium ">Sell your course</h2>
@@ -131,7 +131,7 @@ const CoursePage = async ({ params }: { params: { courseId: string } }) => {
             </div>
             <div>
               <div className="flex flex-row gap-x-2  items-center mt-10">
-                <div className="bg-slate-200 font-bolder text-slate-800 p-2 rounded-full">
+                <div className="bg-primarySea font-bolder text-white p-2 rounded-full">
                   <File />
                 </div>
                 <h2 className="text-xl font-medium ">

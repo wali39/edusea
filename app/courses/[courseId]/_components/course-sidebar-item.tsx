@@ -31,12 +31,14 @@ const CourseSidebarItem = ({
   return (
     <button
       onClick={handleClick}
+      // hover:bg-[#afd6eb63]
       className={cn(
-        "flex  gap-x-2 items-center text-slate-500 text-sm pl-6 font-[500] hover:text-slate-600 hover:bg-slate-200/20",
-        isActive &&
-          "text-slate-700 bg-slate-200/20 hover:bg-slate-200/20 hover:text-slate-700",
+        "flex rounded-sm mx-1 mt-1 gap-x-2 items-center text-textSea text-sm pl-6 font-[500]  ",
+        isActive && "text-slate-700 bg-[#afd6eb63]  ",
         isComplete && "text-emerald-700 hover:text-emerald-700",
-        isComplete && isActive && "bg-emerald-200/20"
+        isComplete &&
+          isActive &&
+          "bg-lightBackgroundSea hover:bg-lightBackgroundSea"
       )}
       type="button"
     >
@@ -44,7 +46,7 @@ const CourseSidebarItem = ({
         <Icon
           size="20"
           className={cn(
-            "text-slate-500",
+            "text-slate-600",
             isActive && "text-slate-700",
             isComplete && "text-emerald-700"
           )}
@@ -53,9 +55,9 @@ const CourseSidebarItem = ({
       </div>
       <div
         className={cn(
-          "ml-auto border-2 opacity-0 border-slate-700 h-full transition-all",
-          isActive && "opacity-100",
-          isComplete && "border-emerald-700"
+          "ml-auto border-2 opacity-0 border-slate-500 h-full transition-all",
+          isActive && "opacity-80",
+          isComplete && "border-teal-600"
         )}
       />
     </button>

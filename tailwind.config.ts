@@ -53,6 +53,24 @@ export default withUt({
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        primarySea: {
+          DEFAULT: "hsl(var(--primary-sea))",
+        },
+        secondarySea: {
+          DEFAULT: "hsl(var(--secondary-sea))",
+        },
+        accentSea: {
+          DEFAULT: "hsl(var(--accent-sea))",
+        },
+        textSea: {
+          DEFAULT: "hsl(var(--text-sea))",
+        },
+        backgroundSea: {
+          DEFAULT: "hsl(var(--background-sea))",
+        },
+        lightBackgroundSea: {
+          DEFAULT: "hsl(var(--light-background-sea))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

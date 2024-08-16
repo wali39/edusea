@@ -8,7 +8,7 @@ import ConfettiProvider from "@/components/provider/confetti-provider";
 
 const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Academeconnect",
+  title: "EduSea",
   description: "Explore the knowledge ocean",
 };
 

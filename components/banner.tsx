@@ -6,7 +6,7 @@ const variantProps = cva("w-full p-4  text-sm  flex items-center gap-2 mt-1", {
   variants: {
     variant: {
       warning: "bg-yellow-300/80 text-primary",
-      success: "bg-emerald-700 text-secondary",
+      success: "bg-primarySea text-white",
     },
     defaultVariants: {
       variant: "warning",
