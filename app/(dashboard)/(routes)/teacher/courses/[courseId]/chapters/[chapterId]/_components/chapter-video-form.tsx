@@ -48,16 +48,16 @@ export const ChapterVideo = ({
   };
 
   return (
-    <div className="mt-6 border bg-slate-100 rounded-md p-4">
+    <div className="mt-6 border bg-lightBackgroundSea rounded-md p-4">
       <div className="font-medium flex items-center justify-between">
         Chapter Video
-        <Button onClick={toggleEdit} variant="ghost">
+        <Button onClick={toggleEdit} variant="link">
           {isEditing && <>Cancel</>}
           {!isEditing && !chapter.videoUrl && (
-            <>
-              <PlusCircle className="h-4 w-4 mr-2" />
-              Add an video
-            </>
+            <p className="flex gap-x-2">
+              <PlusCircle size={20} className="text-teal-900" />
+              <p> Add an video</p>
+            </p>
           )}
           {!isEditing && chapter.videoUrl && (
             <>
@@ -69,11 +69,11 @@ export const ChapterVideo = ({
       </div>
       {!isEditing &&
         (!chapter.videoUrl ? (
-          <div className="flex items-center justify-center h-60 bg-slate-200 rounded-md">
-            <VideoIcon className="h-10 w-10 text-slate-500" />
+          <div className="flex items-center justify-center h-60 bg-[#4fb49b3b] rounded-md">
+            <VideoIcon className="h-10 w-10 " />
           </div>
         ) : (
-          <div className="relative aspect-video mt-2">
+          <div className="relative aspect-video  mt-2">
             <MuxPlayer playbackId={chapter.muxData?.playbackId} />
           </div>
         ))}

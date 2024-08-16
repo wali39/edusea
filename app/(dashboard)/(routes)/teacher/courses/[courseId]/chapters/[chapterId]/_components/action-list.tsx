@@ -52,11 +52,11 @@ const ActionList = ({ courseId, chapter, isComplete }: ActionListProps) => {
   };
   return (
     <div className="flex gap-x-2">
-      <Button variant="outline" disabled={isComplete||isLoading} onClick={onClick}>
+      <Button  className="bg-primarySea hover:bg-teal-600" disabled={isComplete||isLoading} onClick={onClick}>
         {chapter.isPublished ? "Unpublish" : "Publish"}
       </Button>
       <ConfirmModal onConfirm={onDelete} >
-        <Button className="text-white" disabled={isLoading}>
+        <Button className="text-white" variant="destructive" disabled={isLoading}>
           <Trash size={15} />
         </Button>
       </ConfirmModal>

@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/form";
 
 import { Chapter } from "@prisma/client";
-import { Edit, XSquare } from "lucide-react";
+import { Edit, EyeIcon, EyeOff, XSquare } from "lucide-react";
 import { useState } from "react";
 
 import {
@@ -73,7 +73,7 @@ const ChapterAccess = ({
     }
   };
   return (
-    <div className="bg-slate-200 p-4 rounded-md mt-8">
+    <div className="bg-lightBackgroundSea p-4 rounded-md mt-8">
       <div className="flex  justify-between py-2">
         <h4 className="font-medium text-lg">Chapter access</h4>
         <h4
@@ -95,10 +95,14 @@ const ChapterAccess = ({
       {/* <p>{chapter.description}</p> */}
       {!isEditing ? (
         !chapter.isFree ? (
-          <p className="italic"> This chapter is not free for preview</p>
+          <p className="bg-slate-300   rounded-lg p-2 flex gap-x-2">
+            <EyeOff />
+            <span>This chapter is not free for preview</span>
+          </p>
         ) : (
-          <p className="bg-slate-600 text-white rounded-lg p-2">
-            This chapter is free for preview
+          <p className="bg-secondarySea  rounded-lg p-2 flex gap-x-2">
+            <EyeIcon />
+            <span>This chapter is free for preview</span>
           </p>
         )
       ) : (
@@ -125,7 +129,9 @@ const ChapterAccess = ({
             />
             <button
               type="submit"
-              className="py-2 px-4 bg-slate-500 text-white hover:bg-slate-400 rounded-md disabled:bg-slate-300 disabled:cursor-not-allowed"
+              className="py-2 px-4 bg-[#afd6eb63] hover:bg-[#4fb49b3b]
+               text-textSea rounded-md
+               disabled:text-white  disabled:cursor-not-allowed"
               disabled={isSubmitting || !isValid}
             >
               save

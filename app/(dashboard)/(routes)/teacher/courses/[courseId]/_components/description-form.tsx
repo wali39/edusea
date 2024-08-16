@@ -67,7 +67,7 @@ const DescriptionForm = ({ course, courseId }: descriptionFormProps) => {
     }
   };
   return (
-    <div className="bg-slate-200 p-4 rounded-md mt-8">
+    <div className="bg-lightBackgroundSea p-4 rounded-md mt-8">
       <div className="flex  justify-between py-2">
         <h4 className="font-medium text-lg">Course description</h4>
         <h4
@@ -118,7 +118,9 @@ const DescriptionForm = ({ course, courseId }: descriptionFormProps) => {
             />
             <button
               type="submit"
-              className="py-2 px-4 bg-slate-500 text-white hover:bg-slate-400 rounded-md disabled:bg-slate-300 disabled:cursor-not-allowed"
+              className="py-2 px-4 bg-[#afd6eb63] hover:bg-[#4fb49b3b]
+               text-textSea rounded-md
+               disabled:text-white   disabled:cursor-not-allowed"
               disabled={isSubmitting || !isValid}
             >
               save

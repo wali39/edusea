@@ -82,9 +82,9 @@ const ChapterForm = ({ course, courseId }: ChapterFormProps) => {
     router.push(`/teacher/courses/${courseId}/chapters/${id}`);
   };
   return (
-    <div className="relative bg-slate-200 p-4 rounded-md mt-8">
+    <div className="relative bg-lightBackgroundSea p-4 rounded-md mt-8">
       {isReordering && (
-        <div className="absolute h-full w-full top-0 right-0 rounded-md flex items-center bg-slate-500/20 justify-center">
+        <div className="absolute h-full w-full top-0 right-0 rounded-md flex items-center bg-lightBackgroundSea justify-center">
           <Loader2 className="animate-spin" />
         </div>
       )}
@@ -129,7 +129,7 @@ const ChapterForm = ({ course, courseId }: ChapterFormProps) => {
             />
             <button
               type="submit"
-              className="py-2 px-4 bg-slate-500 text-white hover:bg-slate-400 rounded-md disabled:bg-slate-300 disabled:cursor-not-allowed"
+              className="py-2 px-4 bg-[#afd6eb63] hover:bg-[#4fb49b3b] rounded-md disabled:bg-[#afd6eb63] disabled:cursor-not-allowed disabled:text-white"
               disabled={isSubmitting || !isValid}
             >
               create

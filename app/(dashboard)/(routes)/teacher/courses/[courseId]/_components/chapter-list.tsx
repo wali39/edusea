@@ -66,8 +66,8 @@ const ChapterList = ({ OnEdit, onReorder, chapters }: ChapterListProps) => {
                     {...provided.draggableProps}
                     ref={provided.innerRef}
                     className={cn(
-                      "flex gap-2  items-center  font-medium text-md bg-gray-300 rounded-sm mb-4 py-3 px-2",
-                      chapter.isPublished && "bg-slate-300"
+                      "flex gap-2  items-center  font-medium text-md bg-slate-300 rounded-sm mb-4 py-3 px-2",
+                      chapter.isPublished && "bg-secondarySea"
                     )}
                   >
                     <div {...provided.dragHandleProps}>
@@ -75,11 +75,11 @@ const ChapterList = ({ OnEdit, onReorder, chapters }: ChapterListProps) => {
                     </div>
                     {chapter.title}
                     <div className="ml-auto flex items-center gap-1">
-                      {chapter.isFree && <Badge>Free</Badge>}
+                      {chapter.isFree && <Badge className="bg-accentSea">Free</Badge>}
                       <Badge
                         className={cn(
-                          "bg-slate-700",
-                          chapter.isPublished && "bg-sky-700"
+                          "bg-secondarySea",
+                          chapter.isPublished && "bg-teal-700"
                         )}
                       >
                         {chapter.isPublished ? "published" : "draft"}

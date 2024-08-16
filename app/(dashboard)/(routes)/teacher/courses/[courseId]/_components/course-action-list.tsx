@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useConfettiStore } from "@/hooks/use-confetti-store";
 import { Chapter } from "@prisma/client";
 import axios from "axios";
-import { Trash } from "lucide-react";
+import { BookCheck, BookKey, Trash, Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
@@ -56,15 +56,33 @@ const ActionList = ({ courseId, isComplete, isPublished }: ActionListProps) => {
   return (
     <div className="flex gap-2">
       <Button
-        variant="outline"
+        className="bg-primarySea hover:bg-teal-600 "
         disabled={isComplete || isLoading}
         onClick={onClick}
       >
-        {isPublished ? "Unpublish" : "Publish"}
+        {isPublished ? (
+          <p className="flex gap-x-1">
+            <span>Unpublish</span>{" "}
+            <span>
+              <BookKey size={18} />
+            </span>
+          </p>
+        ) : (
+          <p className="flex gap-x-1">
+            <span>Publish</span>{" "}
+            <span>
+              <BookCheck size={18} />
+            </span>
+          </p>
+        )}
       </Button>
       <ConfirmModal onConfirm={onDelete}>
-        <Button className="text-white" disabled={isLoading}>
-          <Trash size={15} />
+        <Button
+          variant="destructive"
+          className="text-white flex gap-x-1"
+          disabled={isLoading}
+        >
+          <span>Delete</span> <Trash2 size={18} />
         </Button>
       </ConfirmModal>
     </div>
