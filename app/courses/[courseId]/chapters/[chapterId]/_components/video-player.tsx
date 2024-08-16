@@ -37,16 +37,19 @@ const VideoPlayer = ({
       if (isComplete) {
         await axios.put(
           `/api/courses/${courseId}/chapters/${chapterId}/progress`,
-          { isComplete: true }
+          { isCompleted: true }
         );
-      }
-      if (!nextChapterId) {
-        confetti.onOpen();
-      }
-      toast.success("Progress updated");
-      router.refresh();
-      if (nextChapterId) {
-        router.push(`/courses/${courseId}/chapters/${nextChapterId}`);
+
+        if (!nextChapterId) {
+          confetti.onOpen();
+        }
+
+        if (nextChapterId) {
+          router.push(`/courses/${courseId}/chapters/${nextChapterId}`);
+        }
+        
+        toast.success("Progress updated");
+        router.refresh();
       }
     } catch (error) {
       toast.error("Seomthing went wrong");
@@ -55,12 +58,12 @@ const VideoPlayer = ({
   return (
     <div className="relative aspect-video">
       {!videoReady && !isLocked && (
-        <div className="absolute inset-0 flex justify-center  items-center bg-slate-900  ">
+        <div className="absolute inset-0 flex justify-center rounded-md items-center bg-slate-700  ">
           <Loader2 className="animate-spin text-white h-8 w-8 " />
         </div>
       )}
       {isLocked && (
-        <div className="absolute inset-0 flex flex-col gap-y-2 justify-center  items-center bg-slate-900  ">
+        <div className="absolute inset-0 rounded-md flex flex-col gap-y-2 justify-center  items-center bg-slate-900  ">
           <Lock className="text-white h-8 w-8 " />
           <p className="text-white">This chapter is locked</p>
         </div>
