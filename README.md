@@ -16,19 +16,14 @@
     <img src="https://res.cloudinary.com/dl1sztvng/image/upload/v1723884598/bmtg0ls20g5fscil3o2w.png" alt="Logo" width="260" height="60">
   </a>
 
-  <h3 align="center"> Explore the knowledge ocean</h3>
+  <h3 align="center"> Learning Management Platform</h3>
 
   <p align="center">
-    Learning mangagement platform
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://edusea.vercel.app/">View Demo</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/wali39/edusea/labels/bug">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/wali39/edusea/labels/enhancement">Request Feature</a>
   </p>
 </div>
 
@@ -39,7 +34,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#technologies-used">Technologies Used</a></li>
       </ul>
     </li>
     <li>
@@ -71,16 +66,15 @@ Edusea- a state-of-the-art Learning Management System designed to provide an int
 <span style="font-size:14px">`01. Dynamic Course Creation & Management:` Easily create and manage course content, including images and attachments</span>
 
 <details>
-<summary>(show screenshot)</summary>
+<summary>(view screenshot)</summary>
 <img width="941" alt="ss3" src="https://res.cloudinary.com/dl1sztvng/image/upload/v1723887988/duwv7eacrlhwvwttsodn.png" style="border-radius:5px">
 </details>
-
 <br>
 
 <span style="font-size:14px">`02. Robust Authentication:` Secure user authentication using Clerk</span>
 
 <details>
-<summary>(show screenshot)</summary>
+<summary>(view screenshot)</summary>
 <img width="941" alt="ss3" src="https://res.cloudinary.com/dl1sztvng/image/upload/v1723889441/zwjzgpexxq4stcorlnpl.png" style="border-radius:5px">
 </details>
 <br>
@@ -88,7 +82,7 @@ Edusea- a state-of-the-art Learning Management System designed to provide an int
 <span style="font-size:14px">`03. Interactive Video Playback & Upload:` Integrated with Mux for a smooth video experience</span>
 
 <details>
-<summary>(show screenshot)</summary>
+<summary>(view screenshot)</summary>
 <img width="941" alt="ss3" src="https://res.cloudinary.com/dl1sztvng/image/upload/v1723889441/vamuimmrw8pbtyhobvhs.png" style="border-radius:5px">
 </details>
 <br>
@@ -96,7 +90,7 @@ Edusea- a state-of-the-art Learning Management System designed to provide an int
 <span style="font-size:14px">`04. Secure Payments:` Stripe integration for handling course payments and subscriptions</span>
 
 <details>
-<summary>(show screenshot)</summary>
+<summary>(view screenshot)</summary>
 <img width="941" alt="ss3" src="https://res.cloudinary.com/dl1sztvng/image/upload/v1723889441/ifqyy5l4koouzasyk6xm.png" style="border-radius:5px">
 </details>
 <br>
@@ -104,7 +98,7 @@ Edusea- a state-of-the-art Learning Management System designed to provide an int
 <span style="font-size:14px">`05. User-Friendly Interface:` Modern, responsive design with Tailwind CSS</span>
 
 <details>
-<summary>(show screenshot)</summary>
+<summary>(view screenshot)</summary>
 <img width="941" alt="ss3" src="https://res.cloudinary.com/dl1sztvng/image/upload/v1723889441/yetlfw7cgxyrwfivuvsd.png" style="border-radius:5px">
 </details>
 <br>
@@ -113,7 +107,7 @@ Edusea- a state-of-the-art Learning Management System designed to provide an int
 <br>
 
 <details>
-<summary>(show screenshot)</summary>
+<summary>(view screenshot)</summary>
 <img width="941" alt="ss3" src="https://res.cloudinary.com/dl1sztvng/image/upload/v1723888505/xmb9djnfwn7bu08jpoyt.png" style="border-radius:5px">
 </details>
 
@@ -147,7 +141,8 @@ Edusea- a state-of-the-art Learning Management System designed to provide an int
 - `@mux/mux-node 8.0.0` and `@mux/mux-player-react 2.3.3` : For video playback and uploads.
 - `@uploadthing/react 6.2.2:` For handling document and image uploads.
 - `react-hot-toast 2.4.1:` For elegant notifications.
-- `zod 4.5.1:` Schema declaration and validation
+- `prisma 5.9.1`: For effiecient and type-safe database access.
+- `zod 4.5.1:` Schema declaration and validation.
 - `zustand 4.5.1:` State management.
 
 **UI/UX Enhancements:**
@@ -175,16 +170,24 @@ Edusea- a state-of-the-art Learning Management System designed to provide an int
 
 **Technology Used:**
 
-[![Mux][Mux]][Mux-url]  
+[![Next][Next.js]][Next-url]
 [![TypeScript][Typescript.ts]][Typescript-url]
+[![MongoDB][MongoDB]][MongoDB-url]
 [![Prisma][Prisma]][Prisma-url]
 [![Axios][Axios]][Axios-url]
 [![Stripe][Stripe]][Stripe-url]
+[![Mux][Mux]][Mux-url]
 
 **Main technologies:**
 
 - `Next.js 10.3.0:` The backbone of the server, handling routing and middleware.
 - `Node.js:` The runtime environment for executing JavaScript on the server side.
+
+**Key Libraries:**
+
+- `Stripe`: Payment processing platform For online transactions.
+- `Uploadthing:` Image and video upload library for seamless multimedia integration.
+- `Mux:` Video streaming and processing platform for high-quality multimedia content.
 
 **Database:**
 
@@ -212,16 +215,13 @@ Edusea- a state-of-the-art Learning Management System designed to provide an int
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get started with the <b>`Edusea`</b> project, follow these steps:
 
 ### Prerequisites
 
 Node version 18.x.x
 
 ### Installation
-
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
 1. Clone the repository
    ```sh
@@ -268,83 +268,13 @@ _Below is an example of how you can instruct your audience on installing and set
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- USAGE EXAMPLES -->
-
-<!-- ## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ROADMAP -->
-
-<!-- ## Roadmap
-
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-- [ ] Chinese
-- [ ] Spanish
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
-
-<!-- CONTRIBUTING -->
-
-<!-- ## Contributing -->
-
-<!-- Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
-
 <!-- LICENSE -->
 
-<!-- ## License
+## License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
-
-<!-- CONTACT -->
-
-<!-- ## Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
-
-<!-- ACKNOWLEDGMENTS -->
-
-<!-- ## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-- [Choose an Open Source License](https://choosealicense.com)
-- [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-- [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-- [Malven's Grid Cheatsheet](https://grid.malven.co/)
-- [Img Shields](https://shields.io)
-- [GitHub Pages](https://pages.github.com)
-- [Font Awesome](https://fontawesome.com)
-- [React Icons](https://react-icons.github.io/react-icons/search)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p> -->
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
@@ -352,15 +282,15 @@ Use this space to list resources you find helpful and would like to give credit 
 [contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
 [contributors-url]: https://github.com/wali39/edusea/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
+[forks-url]: https://github.com/wali39/edusea/network/members
 [stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
+[stars-url]: https://github.com/wali39/edusea/stargazers
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+[issues-url]: https://github.com/wali39/edusea/issues
 [license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[license-url]: https://github.com/wali39/edusea?tab=MIT-1-ov-file
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/wali-ullah139/
+[linkedin-url]: https://www.linkedin.com/in/wali-ullah-7896631aa/
 [product-screenshot]: https://res.cloudinary.com/dl1sztvng/image/upload/v1723526027/alpse5fpj6j1ndo95rvv.png
 [course-creation-screenshot]: https://res.cloudinary.com/dl1sztvng/image/upload/v1723887988/duwv7eacrlhwvwttsodn.png
 [document-upload-screenshot]: https://res.cloudinary.com/dl1sztvng/image/upload/v1723888505/xmb9djnfwn7bu08jpoyt.png
@@ -375,6 +305,8 @@ Use this space to list resources you find helpful and would like to give credit 
 [Typescript.ts]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
 [Prisma]: https://img.shields.io/badge/Prisma-191D3C?style=for-the-badge&logo=prisma&logoColor=white
 [Prisma-url]: https://www.prisma.io/
+[MongoDB]: https://img.shields.io/badge/-MongoDB-13aa52?style=for-the-badge&logo=mongodb&logoColor=white
+[MongoDB-url]: https://www.mongodb.com/
 [Typescript-url]: https://www.typescriptlang.org/
 [Shadcn/ui]: https://img.shields.io/badge/shadcn%2Fui-000?logo=shadcnui&logoColor=fff&style=for-the-badge
 [Shadcn/ui-url]: https://ui.shadcn.com/
@@ -408,11 +340,3 @@ Use this space to list resources you find helpful and would like to give credit 
 [Reactconfetti-url]: https://www.npmjs.com/package/react-confetti
 [Zustand]: https://custom-icon-badges.demolab.com/badge/zustand-black?style=for-the-badge
 [Zustand-url]: https://zustand-demo.pmnd.rs/
-
-```
-
-```
-
-```
-
-```
