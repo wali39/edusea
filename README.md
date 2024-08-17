@@ -224,7 +224,7 @@ Node version 18.x.x
 ### Installation
 
 1. Clone the repository
-   ```sh
+   ```js
    git clone https://github.com/wali39/edusea.git
    ```
 2. Install dependencies
