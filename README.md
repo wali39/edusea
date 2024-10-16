@@ -66,7 +66,6 @@ Edusea- a state-of-the-art Learning Management System designed to provide an int
 <br>
 
 <span style="font-size:14px">`02. Robust Authentication:` Secure user authentication using Clerk</span>
-
 <details>
 <summary>(view screenshot)</summary>
 <img width="941" alt="ss3" src="https://res.cloudinary.com/dl1sztvng/image/upload/v1723889441/zwjzgpexxq4stcorlnpl.png" style="border-radius:5px">
